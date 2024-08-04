@@ -41,3 +41,37 @@ def insert():
         mysql.connection.commit()
         return redirect(url_for('Index'))
 
+
+@app.route('/update', methods=['POST', 'GET'])
+def update():
+    if request.method == "POST":
+        id_data = request.form.get('id')
+        First_name = request.form['First Name']
+        Last_name = request.form['Last Name']
+        Email = request.form['Email']
+        Phone_Number = request.form['Phone Number']
+
+        cur = mysql.connection.cursor()
+        cur.execute("""UPDATE students 
+        SET First_name = %s, Last_name = %s, Email = %s, Phone_Number = %s
+        WHERE id = %s""", (First_name, Last_name, Email, Phone_Number, id_data))
+
+        flash('Data Updated Succesfully')
+        mysql.connection.commit()
+        return redirect(url_for('Index'))
+
+@app.route('/delete/<string:id_data>', methods=['POST', 'GET'])
+def delete(id_data):
+
+    flash("Data Deleted Successfully")
+
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM students WHERE id = %s",(id_data))
+    mysql.connection.commit()
+    return redirect(url_for('Index'))
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    
