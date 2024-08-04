@@ -27,3 +27,34 @@
 
             <h2>Student List <button type="button" class="btn btn-primary pull-right" data-toggle = "modal" data-target = "#mymodal">
                 Add Student Data </button></h2>
+
+
+<tr>
+    <td>{{loop.index}}</td>
+    <td>{{row.1}}</td>
+    <td>{{row.2}}</td>
+    <td>{{row.3}}</td>
+    <td>{{row.4}}</td>
+
+    <td>
+
+    </td>
+
+
+</tr>
+
+<div id="modaledit{{row.0}}" class="modal fade" role="dialog">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> Update Data</h4>
+            </div>
+            <div class="modal-body">
+
+
+            
