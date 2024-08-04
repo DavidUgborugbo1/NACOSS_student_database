@@ -56,5 +56,69 @@
             </div>
             <div class="modal-body">
 
+            <div class="form-group">
+
+                    <label>First Name:</label>
+                    <input type="hidden" name="id" value="{{row.0}}">
+                    <input type="text" class="form-control" name="First Name" value="{{row.1}}">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control" name="Last Name" value="{{row.2}}">
+
+                </div>
+                <div class="form-group">
+
+                    <label>Email:</label>
+                    <input type="text" class="form-control" name="Email" value="{{row.3}}">
+
+
+                <div class="form-group">
+
+                    <Label>Phone Number:</Label>
+                    <input type="number" class="form-control" name="Phone Number" value="{{row.4}}">
+
+
+                <div class="form-group">
+
+                </div>
+
+                <button class="btn btn-primary" type="Submit">Update</button>
+
+
+                </div>
+
+
+                </div>
+
+            </form>
+
+        </div>
+
+    <div class="modal-footer">
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+    </div>
+
+    </div>
+
+</div>
+     </div>
+
+     {%endfor%}
+        </table>
+
+
+
+
+    </div>
+
+
+</div>
+
 
             
