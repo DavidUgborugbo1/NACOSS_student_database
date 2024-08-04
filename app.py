@@ -13,6 +13,15 @@ app.config['MYSQL_DB'] = 'student_database'
 
 mysql = MySQL(app)
 
+@app.route('/')
+def Index():
+
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM students")
+    data = cur.fetchall()
+    cur.close()
+
+    return render_template('index.html', students=data)
 
 
 
